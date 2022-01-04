@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\3 - Domain\Truphone.Device.Service.Domain\Truphone.Device.Service.Domain.csproj" />
+    <ProjectReference Include="..\..\4 - Infrastructure\4.2 - CrossCutting\Truphone.Device.Service.CC.Common\Truphone.Device.Service.CC.Common.csproj" />
+  </ItemGroup>
+
+</Project>
