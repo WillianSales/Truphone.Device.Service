@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truphone.Device.Service.API", "src\1 - Presentation\Truphone.Device.Service.API\Truphone.Device.Service.API.csproj", "{872EF8F3-3FDF-43D4-9A39-7F396A1711AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{B6790864-9E69-4248-9A1F-0F7B7995A4E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{C26F6915-791D-4D32-B153-0FB24A753424}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{6C34A156-E972-4195-B10C-5E6B35D5475A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{826F6E77-381F-41B7-B132-8E2A8BDB2BAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Test", "5 - Test", "{0FFB2AF5-5A7C-48C5-85B6-205B48F6A397}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{679FB783-2B6B-491F-83D2-08968156EBA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{5A6F834A-3C12-4F35-88A2-50021C0E7CF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{872EF8F3-3FDF-43D4-9A39-7F396A1711AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872EF8F3-3FDF-43D4-9A39-7F396A1711AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872EF8F3-3FDF-43D4-9A39-7F396A1711AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872EF8F3-3FDF-43D4-9A39-7F396A1711AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{872EF8F3-3FDF-43D4-9A39-7F396A1711AE} = {B6790864-9E69-4248-9A1F-0F7B7995A4E4}
+		{679FB783-2B6B-491F-83D2-08968156EBA8} = {826F6E77-381F-41B7-B132-8E2A8BDB2BAF}
+		{5A6F834A-3C12-4F35-88A2-50021C0E7CF9} = {826F6E77-381F-41B7-B132-8E2A8BDB2BAF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BD25193-2D65-48D6-91BB-5A1F4141C4EF}
+	EndGlobalSection
+EndGlobal
