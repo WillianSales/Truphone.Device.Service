@@ -2,13 +2,14 @@
 ## Note: This project is a WebAPI for Truphone interview
 
 ### Project
-Solution made using Domain-driven design (DDD) software design approach. The code was made following SOLID principles.
-
 WebAPI project using in-memory database.
 
 OpenAPI document: [TruphoneDeviceOpenAPI](/docs/TruphoneDeviceOpenAPI.yml)
 
-**Solution structure**
+### Architecture
+Solution made using Domain-driven design (DDD) software design approach. The code was made following SOLID principles.
+
+**Project layers structure**
 * 1 - Presentation
     * Truphone.Device.Service.API
         * Project description: Solution entry point. Project responsible for exposing inputs for the solution.
@@ -49,10 +50,12 @@ OpenAPI document: [TruphoneDeviceOpenAPI](/docs/TruphoneDeviceOpenAPI.yml)
 ### How to run
 * Get the project:
     * Clone the project from GitHub: [Truphone.Device.Service](https://github.com/WillianSales/Truphone.Device.Service)
+
 * Run on Visual Studio 2022:
     * Open the solution on Visual Studio 2022;
     * Press F5 or press the "Docker" button on Visual Studio 2022;
     * Visual Studio 2022 will open the browser with the project swagger, where you can use the project.
+
 * Run on Docker:
     * On a PowerShell terminal, change the directory to the project ".sln" folder;
     * Run docker-compose command: docker-compose up --build
