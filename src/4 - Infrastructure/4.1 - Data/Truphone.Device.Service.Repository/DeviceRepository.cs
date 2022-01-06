@@ -84,9 +84,6 @@ namespace Truphone.Device.Service.Repository
 
             var deviceDB = await this.GetByIdAsync(device.Id, cancellationToken);
 
-            if (deviceDB == null)
-                return null;
-
             device.CreationTime = deviceDB.CreationTime;
 
             return _deviceDb[device.Id] = device;

@@ -6,11 +6,12 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+ENV ASPNETCORE_ENVIRONMENT=Development
 WORKDIR /src
-COPY ["Truphone.Device.Service.API/Truphone.Device.Service.API.csproj", "Truphone.Device.Service.API/"]
-RUN dotnet restore "Truphone.Device.Service.API/Truphone.Device.Service.API.csproj"
+COPY ["src/1 - Presentation/Truphone.Device.Service.API/Truphone.Device.Service.API.csproj", "src/1 - Presentation/Truphone.Device.Service.API/"]
+RUN dotnet restore "src/1 - Presentation/Truphone.Device.Service.API/Truphone.Device.Service.API.csproj"
 COPY . .
-WORKDIR "/src/Truphone.Device.Service.API"
+WORKDIR "/src/src/1 - Presentation/Truphone.Device.Service.API"
 RUN dotnet build "Truphone.Device.Service.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

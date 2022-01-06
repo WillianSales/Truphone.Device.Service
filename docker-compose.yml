@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  api:
+      build:
+        context: ./
+        dockerfile: "./src/1 - Presentation/Truphone.Device.Service.API/Dockerfile"
+      ports:
+        - 49219:80

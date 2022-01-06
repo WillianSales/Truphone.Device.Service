@@ -31,7 +31,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(x => { x.SwaggerEndpoint("v1/swagger.yaml", "Truphone Device API"); });
 }
 
 app.UseHttpsRedirection();

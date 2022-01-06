@@ -1,0 +1,280 @@
+openapi: 3.0.1
+info:
+  title: Truphone.Device.Service.API
+  version: '1.0'
+paths:
+  /devices:
+    get:
+      tags:
+        - Devices
+      summary: Get a list of devices.
+      parameters:
+        - name: name
+          in: query
+          schema:
+            type: string
+            default: ''
+        - name: brand
+          in: query
+          description: Device brand
+          schema:
+            type: string
+            default: ''
+        - name: pageIndex
+          in: query
+          description: Devices list page index
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: pageSize
+          in: query
+          description: Devices list page size
+          schema:
+            type: integer
+            format: int32
+            default: 30
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeviceDtoPageDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDtoPageDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDtoPageDto'
+    post:
+      tags:
+        - Devices
+      summary: Create device.
+      requestBody:
+        description: Device to be created
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DeviceDto'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeviceDto'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+  '/devices/{id}':
+    get:
+      tags:
+        - Devices
+      summary: Get a device by id.
+      parameters:
+        - name: id
+          in: path
+          description: Device identifier
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeviceDto'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeviceDto'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeviceDto'
+    put:
+      tags:
+        - Devices
+      summary: Updated device.
+      parameters:
+        - name: id
+          in: path
+          description: Device identifier
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: Device to be updated
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DeviceDto'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeviceDto'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+    patch:
+      tags:
+        - Devices
+      summary: 'Update the device-specific field. How to use: http://jsonpatch.com/'
+      parameters:
+        - name: id
+          in: path
+          description: Device identifier
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: Json with the device-specific field to be patched
+        content:
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Operation'
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Operation'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Operation'
+          application/*+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Operation'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDto'
+    delete:
+      tags:
+        - Devices
+      summary: Delete device.
+      parameters:
+        - name: id
+          in: path
+          description: Device identifier
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Success
+components:
+  schemas:
+    DeviceDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+          nullable: true
+        brand:
+          type: string
+          nullable: true
+        creationTime:
+          type: string
+          format: date-time
+      additionalProperties: false
+    DeviceDtoPageDto:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceDto'
+          nullable: true
+        pageIndex:
+          type: integer
+          format: int64
+        totalItems:
+          type: integer
+          format: int64
+        totalPages:
+          type: integer
+          format: int64
+      additionalProperties: false
+    Operation:
+      type: object
+      properties:
+        operationType:
+          $ref: '#/components/schemas/OperationType'
+        path:
+          type: string
+          nullable: true
+        op:
+          type: string
+          nullable: true
+        from:
+          type: string
+          nullable: true
+        value:
+          nullable: true
+      additionalProperties: false
+    OperationType:
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      type: integer
+      format: int32
