@@ -58,7 +58,7 @@ Solution made using Domain-driven design (DDD) software design approach. The cod
 
 * Run on Docker:
     * On a PowerShell terminal, change the directory to the project ".sln" folder;
-    * Run docker-compose command: docker-compose up --build
+    * Run docker-compose command: ```docker-compose up --build```
     * The project is exposed on localhost on port 49219: http://localhost:49219/devices
     * You can access the OpenAPI project document here: [TruphoneDeviceOpenAPI](/docs/TruphoneDeviceOpenAPI.yml)
     * Use Postman or any other RESTAPI software to interact with the project.
